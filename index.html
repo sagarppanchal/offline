@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="Description" content="Put your description here.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#317EFB"/>
+<link rel='manifest' href='manifest.json'>
+<head>
+	<title>Welcome to Offline App</title>
+</head>
+<body>
+	<h1>Welcome to Offline Application</h1>
+	<h2>Stay Free! Net Free! Still Connected</h2>
+	<p>lorem sparam lorem sparam lorem sparam lorem sparam lorem sparam lorem sparam lorem sparam lorem sparam lorem sparam </p>
+	<p>lorem sparam lorem sparam lorem sparam lorem sparam lorem sparam lorem sparam lorem sparam lorem sparam lorem sparam </p>
+	<p>lorem sparam lorem sparam lorem sparam lorem sparam lorem sparam lorem sparam lorem sparam lorem sparam lorem sparam </p>
+</body>
+</html>
+<script type="text/javascript" src="service-worker.js"></script>
+<script type="text/javascript">
+	if ('serviceWorker' in navigator) {
+	  navigator.serviceWorker.register('service-worker.js')
+	  .then(function(registration) {
+	    console.log('Registered:', registration);
+	  })
+	  .catch(function(error) {
+	    console.log('Registration failed: ', error);
+	  });
+	}
+</script>
