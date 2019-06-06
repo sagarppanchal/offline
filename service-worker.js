@@ -40,3 +40,40 @@ function fetchAndCache(url) {
     // You could return a custom offline 404 page here
   });
 }
+
+////////////////////////////////////////////////////////
+//push notification
+
+self.addEventListener('notificationclose', event => {
+  const notification = event.notification;
+  const primaryKey = notification.data.primaryKey;
+
+  console.log('Closed notification: ' + primaryKey);
+});
+
+self.addEventListener('notificationclick', event => {
+
+  // TODO 2.8 - change the code to open a custom page
+
+  //clients.openWindow('https://google.com');
+});
+
+self.addEventListener('notificationclick', event => {
+  const notification = event.notification;
+  const primaryKey = notification.data.primaryKey;
+  const action = event.action;
+
+  if (action === 'close') {
+    notification.close();
+  } else {
+    console.log(primaryKey);
+    clients.openWindow('samples/page' + primaryKey + '.html');
+    notification.close();
+  }
+
+  // TODO 5.3 - close all notifications when one is clicked
+
+});
+
+
+
